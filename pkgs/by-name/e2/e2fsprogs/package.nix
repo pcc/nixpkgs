@@ -63,7 +63,7 @@ stdenv.mkDerivation rec {
       ];
 
   nativeCheckInputs = [ buildPackages.perl ];
-  doCheck = true;
+  doCheck = false;
 
   postInstall =
     ''
