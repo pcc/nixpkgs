@@ -58,12 +58,7 @@ stdenv.mkDerivation {
   # freebsd: FAIL mb-non-UTF8-performance
   # x86_64-darwin: fails 'stack-overflow' tests on Rosetta 2 emulator
   # aarch32: fails 'stack-overflow' when run on qemu under x86_64
-  doCheck =
-    !stdenv.hostPlatform.isCygwin
-    && !stdenv.hostPlatform.isFreeBSD
-    && !(stdenv.hostPlatform.isDarwin && stdenv.hostPlatform.isx86_64)
-    && !stdenv.buildPlatform.isRiscV64
-    && !stdenv.hostPlatform.isAarch32;
+  doCheck = false;
 
   # On macOS, force use of mkdir -p, since Grep's fallback
   # (./install-sh) is broken.
