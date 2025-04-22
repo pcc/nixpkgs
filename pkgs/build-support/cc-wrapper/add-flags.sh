@@ -28,7 +28,9 @@ for var in "${var_templates_bool[@]}"; do
 done
 
 # Prepending `@bintools@/bin' to $PATH forces cc to use ld-wrapper.sh when calling ld.
-export PATH="@bintools@/bin:$PATH"
+# $path_backup is where cc-wrapper.sh stores the $PATH that will be used for the
+# compiler invocation.
+path_backup="@bintools@/bin:$path_backup"
 
 # Export and assign separately in order that a failing $(..) will fail
 # the script.
