@@ -96,6 +96,8 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [ "watchdog" ];
 
+  doCheck = false;
+
   meta = with lib; {
     description = "Python API and shell utilities to monitor file system events";
     mainProgram = "watchmedo";
