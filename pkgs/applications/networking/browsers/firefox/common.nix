@@ -386,6 +386,7 @@ buildStdenv.mkDerivation {
       gnum4
       llvmPackagesBuildBuild.bintools
       makeWrapper
+      nasm
       nodejs
       perl
       python3
@@ -573,7 +574,6 @@ buildStdenv.mkDerivation {
       libGL
       libGLU
       libstartup_notification
-      nasm
       perl
       zip
     ]
