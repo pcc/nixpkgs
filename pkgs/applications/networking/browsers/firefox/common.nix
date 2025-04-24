@@ -358,6 +358,7 @@ buildStdenv.mkDerivation {
       # https://bugzilla.mozilla.org/show_bug.cgi?id=1939405
       ./firefox-mac-missing-vector-header.patch
     ]
+    ++ [ ./build-fix-RELRHACK_LINKER-setting-when-linker-name-i.patch ]
     ++ extraPatches;
 
   postPatch =
