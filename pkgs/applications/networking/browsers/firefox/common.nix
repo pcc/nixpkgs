@@ -387,7 +387,6 @@ buildStdenv.mkDerivation {
       gnum4
       llvmPackagesBuildBuild.bintools
       makeWrapper
-      nasm
       nodejs
       perl
       python3
@@ -400,6 +399,7 @@ buildStdenv.mkDerivation {
     ]
     ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [ pkg-config ]
     ++ lib.optionals stdenv.hostPlatform.isDarwin [ rsync ]
+    ++ lib.optionals stdenv.hostPlatform.isX86 [ nasm ]
     ++ lib.optionals crashreporterSupport [
       dump_syms
       patchelf
